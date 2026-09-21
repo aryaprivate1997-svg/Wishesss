@@ -79,6 +79,14 @@ h1 {
   <div id="msg3" class="message">The happiest moments aren’t always big celebrations — it’s simply having you beside me ✨</div>
   <div id="msg4" class="message">Forever yours 💍</div>
 
+  <div class="balloon" onclick="showMessage(5)">✉️</div>
+
+<div id="msg5" class="message">
+  Dear Love,  
+  Every day with you feels like a blessing.  
+  Thank you for being my partner, my joy, and my forever. 💌  
+</div>
+
   <script>
     function showMessage(num) {
       document.getElementById("msg" + num).style.display = "block";
@@ -95,6 +103,11 @@ h1 {
     }
 
     setInterval(createHeart, 300);
+
+    function showMessage(num) {
+  document.getElementById("msg" + num).style.display = "block";
+}
+
   </script>
 </body>
 </html>
