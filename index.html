@@ -17,21 +17,17 @@
 
     h1 {
       color: #d6336c;
-      font-size: 6vw;
+      font-size: 6vw; /* scales with screen width */
       margin-bottom: 2vh;
     }
 
     .balloon {
       display: inline-block;
       margin: 2vw;
-      font-size: 10vw;
+      font-size: 10vw; /* scales with screen width */
       cursor: pointer;
       animation: float 5s infinite ease-in-out;
       transition: transform 0.2s;
-    }
-
-    .balloon:hover {
-      transform: scale(1.2);
     }
 
     .message {
@@ -64,6 +60,7 @@
       }
     }
 
+    /* Adjust font sizes for larger screens */
     @media (min-width: 768px) {
       h1 { font-size: 40px; }
       .balloon { font-size: 60px; }
@@ -71,6 +68,7 @@
     }
   </style>
 </head>
+
 <body>
   <h1>🎉 Happy 4th Month Anniversary 🎉</h1>
 
