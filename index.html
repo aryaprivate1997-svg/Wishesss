@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Anniversary</title>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <style>
@@ -10,19 +11,20 @@
       font-family: 'Dancing Script', cursive;
       background: linear-gradient(to top, #ffe6f0, #fff);
       margin: 0;
-      padding: 50px;
-      overflow: hidden; /* important for falling hearts */
+      padding: 5vh 5vw;
+      overflow: hidden;
     }
 
     h1 {
       color: #d6336c;
-      font-size: 42px;
+      font-size: 6vw;
+      margin-bottom: 2vh;
     }
 
     .balloon {
       display: inline-block;
-      margin: 20px;
-      font-size: 60px;
+      margin: 2vw;
+      font-size: 10vw;
       cursor: pointer;
       animation: float 5s infinite ease-in-out;
       transition: transform 0.2s;
@@ -34,8 +36,8 @@
 
     .message {
       display: none;
-      font-size: 24px;
-      margin-top: 15px;
+      font-size: 4vw;
+      margin-top: 2vh;
       color: #d6336c;
       font-weight: bold;
     }
@@ -46,7 +48,6 @@
       100% { transform: translateY(0); }
     }
 
-    /* Falling hearts animation */
     .heart {
       position: fixed;
       top: -50px;
@@ -62,6 +63,12 @@
         opacity: 0;
       }
     }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 40px; }
+      .balloon { font-size: 60px; }
+      .message { font-size: 24px; }
+    }
   </style>
 </head>
 <body>
@@ -72,17 +79,16 @@
   <div class="balloon" onclick="showMessage(3)">🎈</div>
   <div class="balloon" onclick="showMessage(4)">❤️</div>
 
- <div id="msg1" class="message">You are my First Love 🌟</div>
-<div id="msg2" class="message">My heart beats for you 💓</div>
-<div id="msg3" class="message">The Happiest moments aren't always big celebration...its simply having u beside mee.....!!!!! ✨</div>
-<div id="msg4" class="message">Forever yours 💍</div>
+  <div id="msg1" class="message">You are my First Love 🌟</div>
+  <div id="msg2" class="message">My heart beats for you 💓</div>
+  <div id="msg3" class="message">The happiest moments aren’t always big celebrations — it’s simply having you beside me ✨</div>
+  <div id="msg4" class="message">Forever yours 💍</div>
 
   <script>
     function showMessage(num) {
       document.getElementById("msg" + num).style.display = "block";
     }
 
-    // Falling hearts effect
     function createHeart() {
       const heart = document.createElement("div");
       heart.className = "heart";
@@ -90,14 +96,9 @@
       heart.style.left = Math.random() * window.innerWidth + "px";
       heart.style.animationDuration = (3 + Math.random() * 2) + "s";
       document.body.appendChild(heart);
-
-      // Remove heart after animation
-      setTimeout(() => {
-        heart.remove();
-      }, 5000);
+      setTimeout(() => heart.remove(), 5000);
     }
 
-    // Start shower when page loads
     setInterval(createHeart, 300);
   </script>
 </body>
