@@ -182,10 +182,7 @@
 
     setInterval(createHeart, 300);
 
-    // Email modal functions
-    function openEmail() {
-      document.getElementById("emailModal").style.display = "block";
-    }
+   
 
     function closeEmail() {
       document.getElementById("emailModal").style.display = "none";
@@ -198,6 +195,16 @@
         modal.style.display = "none";
       }
     }
+
+    function openEmail() {
+  const password = prompt("Enter the secret password to open the letter:");
+  if (password === "mySecret123") {   // <-- change this to your chosen password
+    document.getElementById("emailModal").style.display = "block";
+  } else {
+    alert("Sorry, wrong password!");
+  }
+}
+
   </script>
 </body>
 </html>
